@@ -1,0 +1,99 @@
+@font-face {
+	font-family: "Gilroy ExtraBold";
+	src: url("//db.onlinewebfonts.com/t/00d5a78493aed4b11e2584ad7cceee49.eot");
+	src: url("//db.onlinewebfonts.com/t/00d5a78493aed4b11e2584ad7cceee49.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/00d5a78493aed4b11e2584ad7cceee49.woff2") format("woff2"),
+		url("//db.onlinewebfonts.com/t/00d5a78493aed4b11e2584ad7cceee49.woff") format("woff"), url("//db.onlinewebfonts.com/t/00d5a78493aed4b11e2584ad7cceee49.ttf") format("truetype"),
+		url("//db.onlinewebfonts.com/t/00d5a78493aed4b11e2584ad7cceee49.svg#Gilroy ExtraBold") format("svg");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+}
+
+main {
+	scroll-behavior: smooth;
+}
+
+.gilroy {
+	font-family: "Gilroy ExtraBold";
+}
+
+.nav {
+	background-color: red;
+	top: 0;
+	height: 50px;
+	position: sticky;
+	padding: 0.125rem 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #fff;
+	box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
+}
+
+.nav a {
+	font-family: "Gilroy ExtraBold";
+}
+
+.nav a,
+.nav i {
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	transition: 0.5s background-color;
+}
+.nav .logo {
+	display: flex;
+}
+.nav .links {
+	display: flex;
+}
+.nav .links a:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav .hamburger {
+	display: none;
+}
+.nav .hamburger i {
+	display: flex;
+}
+.nav #toggle {
+	display: none;
+}
+
+section {
+  padding-top: 70px;
+}
+
+@media screen and (max-width: 991px) {
+	.nav .links {
+		background-color: rgba(0, 0, 0, 0.8);
+		position: absolute;
+		top: 50px;
+		left: 0;
+		width: 100%;
+		flex-direction: column;
+		text-align: center;
+		transition: all 0.5s ease-in-out;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	}
+	.nav .hamburger {
+		display: flex;
+	}
+	.nav .hamburger .fa-times {
+		display: none;
+	}
+	.nav #toggle:checked + .links {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	}
+	.nav #toggle:checked ~ .hamburger label .fa-bars {
+		display: none;
+	}
+	.nav #toggle:checked ~ .hamburger label .fa-times {
+		display: block;
+	}
+}
